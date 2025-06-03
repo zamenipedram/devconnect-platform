@@ -1,0 +1,11 @@
+jwt:
+  secret: ${JWT_SECRET}
+
+server:
+  port: 8444
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.p12
+    key-store-password: yourpassword
+    keyStoreType: PKCS12
+    keyAlias: youralias

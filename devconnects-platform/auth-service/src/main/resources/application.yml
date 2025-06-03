@@ -1,0 +1,44 @@
+server:
+  port: 8082
+
+jwt:
+  secret: "d2h4e5t7u8g3h4g5h6k3h2g6k8j7k4j2g5k7h9k2m9x0r2s4t6v7y9z2p5d7f9g0k2m5r7u9x2z5c7d9f0g1h3j5"
+  accessTokenExpirationMs: 3600000     # 1 hour
+  refreshTokenExpirationMs: 604800000  # 7 days
+
+rabbitmq:
+  exchange: user.exchange
+  queue: user.queue
+  routing-key: user.created
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+    name: auth-service
+  security:
+    user:
+      name: admin
+      password: password
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+  api-docs:
+    path: /v3/api-docs
